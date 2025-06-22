@@ -71,6 +71,73 @@ http://localhost:8080/query-service/wallet/<walletId>/balance?date=YYYY-MM-DD
 ```
 Replace `<walletId>` and `date` as needed to retrieve current or historical balances.
 
+## Available APIs
+
+### user-service
+
+#### POST /user-service/user
+- **Description:** Creates a new user. Returns the user ID as plain text.
+- **Request body:**
+  ```json
+  {
+    "name": "string",
+    "email": "string"
+  }
+  ```
+- **Response:**
+  - `201 Created`: User ID (string)
+  - `409 Conflict`: User already exists
+
+---
+
+### wallet-service
+
+#### POST /wallet-service/wallet
+- **Description:** Creates a new wallet for a user. Returns the wallet ID as plain text.
+- **Request body:**
+  ```json
+  {
+    "userId": "string"
+  }
+  ```
+- **Response:**
+  - `201 Created`: Wallet ID (string)
+  - `409 Conflict`: Wallet already exists
+
+---
+
+### transaction-service
+
+#### POST /transaction-service/transaction
+- **Description:** Creates a new transaction (deposit, withdraw, or transfer) for a wallet. Returns the transaction ID as plain text.
+- **Request body:**
+  ```json
+  {
+    "fromWalletId": "string",
+    "toWalletId": "string (optional for deposit/withdraw)",
+    "type": "DEPOSIT | WITHDRAW | TRANSFER",
+    "amount": number
+  }
+  ```
+- **Response:**
+  - `201 Created`: Transaction ID (string)
+
+---
+
+### query-service
+
+#### GET /query-service/user
+- **Description:** Returns a list of all users.
+
+#### GET /query-service/user/{userId}
+- **Description:** Returns the user with the specified ID.
+
+#### GET /query-service/user/login?email={email}
+- **Description:** Returns the user with the specified email.
+
+#### GET /query-service/wallet/{walletId}/balance?date=YYYY-MM-DD
+- **Description:** Returns the balance (current or historical) for the specified wallet at the given date.
+
 ## Notes
 - Always use the `userId` and `walletId` returned from the creation endpoints in subsequent requests.
 - You can import the provided Postman collection (`Wallet Service.postman_collection.json`) into Postman for ready-to-use requests.

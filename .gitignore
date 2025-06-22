@@ -1,0 +1,50 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# System files
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Test/Temp
+*.tmp
+*.bak
+
+# Others
+*.env
+
+# Java
+*.class
+
+# Postman
+*.postman_collection.json
+
+# Jupyter
+*.ipynb_checkpoints/
+
+# Ignore generated scripts
+/test_wallet_service.sh
+/test_wallet_service.js

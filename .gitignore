@@ -45,6 +45,3 @@ node_modules/
 # Jupyter
 *.ipynb_checkpoints/
 
-# Ignore generated scripts
-/test_wallet_service.sh
-/test_wallet_service.js

@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "d339b834-7335-4908-b206-171942eb2f84",
+		"name": "Wallet Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2459685"
+	},
+	"item": [
+		{
+			"name": "Add User - 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"joao\",\r\n    \"email\": \"joao@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user-service/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user-service",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User - 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"maria\",\r\n    \"email\": \"maria@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user-service/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user-service",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Wallet - User 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"a4a52d78-9083-4160-ac1d-05a3b2da28b8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/wallet-service/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"wallet-service",
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Wallet - User 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"6a7119af-8ebf-4308-8932-2592435a9976\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/wallet-service/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"wallet-service",
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Transaction - DEPOSIT- Wallet User 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromWalletId\": \"26a565b2-c1bd-4218-aef3-3c42bb61f845\",\r\n    \"type\": \"DEPOSIT\",\r\n    \"amount\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/transaction-service/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"transaction-service",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Transaction - WITHDRAW - Wallet User 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromWalletId\": \"26a565b2-c1bd-4218-aef3-3c42bb61f845\",\r\n    \"type\": \"WITHDRAW\",\r\n    \"amount\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/transaction-service/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"transaction-service",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Transaction - TRANSFER - Wallet User 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromWalletId\": \"26a565b2-c1bd-4218-aef3-3c42bb61f845\",\r\n    \"toWalletId\": \"a2160e13-081c-48a0-bcd2-be5837886c98\",\r\n    \"type\": \"TRANSFER\",\r\n    \"amount\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/transaction-service/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"transaction-service",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get balance - User 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/query-service/wallet/26a565b2-c1bd-4218-aef3-3c42bb61f845/balance?date=2025-06-21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"query-service",
+						"wallet",
+						"26a565b2-c1bd-4218-aef3-3c42bb61f845",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-06-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get balance - User 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/query-service/wallet/a2160e13-081c-48a0-bcd2-be5837886c98/balance?date=2025-06-20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"query-service",
+						"wallet",
+						"a2160e13-081c-48a0-bcd2-be5837886c98",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-06-20"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
